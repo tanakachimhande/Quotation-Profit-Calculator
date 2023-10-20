@@ -48,6 +48,10 @@ h2{
     padding: 5px;
 }
 
+.number-of-items{
+    font-size: 25px;
+}
+
 .unit-price{
     display: flex;
     gap: 10px;

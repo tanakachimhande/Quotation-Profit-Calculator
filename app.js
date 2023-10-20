@@ -7,11 +7,11 @@ let unitPrice = document.querySelector('#unitprice');
 let vatPercentage = document.querySelector('#vatpercentage');
 let allTotalPrice = document.querySelector('.allTotals');
 const clearNumbersButton = document.querySelector('#clearNumbersButton');
+let itemsCount = document.querySelector('.items-count');
 let error = document.querySelector('.error');
 let success = document.querySelector('.success');
 const profitPercentage = document.querySelector('#profitpercentage');
 const totalProfit = document.querySelector('.totalprofit');
-const calculateBtn = document.querySelector('#calculatebtn');
 
 // Dynamic Data-Results
 
@@ -20,8 +20,6 @@ let totalPrice = document.querySelector('.totalprice');
 const clearBtn = document.querySelector('#clearbtn');
 
 // Event Handling for calculations
-
-calculateBtn.addEventListener('click', calculations);
 clearBtn.addEventListener('click',clearData)
 
 // Calculations
@@ -113,6 +111,9 @@ clearNumbersButton.addEventListener('click', clearNumbers);
 
 let allTotals = [];
 
+// Counting Number of Itmes in an array
+
+
 // All Profit Totals
 
 let allTotalProfit = [];
@@ -154,6 +155,7 @@ function updateRealTimeCalculation() {
         allTotalPriceCalc();
         allTotalProfitCalc();
 
+
     } else {
 
         // Handle cases where inputs are incomplete or not valid
@@ -180,7 +182,8 @@ function allTotalPriceCalc() {
 
         const theTotalPrice = total.toFixed(2);
         allTotalPrice.textContent = theTotalPrice;
-        console.log(theTotalPrice);
+        const count = allTotals.length;
+        itemsCount.textContent = ` ( ${count} )`;
     } else {
         error.textContent = "No Data Found"
         setTimeout(() => {
