@@ -12,6 +12,7 @@ let error = document.querySelector('.error');
 let success = document.querySelector('.success');
 const profitPercentage = document.querySelector('#profitpercentage');
 const totalProfit = document.querySelector('.totalprofit');
+const calculate = document.querySelector('#calculate');
 
 // Dynamic Data-Results
 
@@ -20,7 +21,18 @@ let totalPrice = document.querySelector('.totalprice');
 const clearBtn = document.querySelector('#clearbtn');
 
 // Event Handling for calculations
+calculate.addEventListener('click',calculations)
 clearBtn.addEventListener('click',clearData)
+clearNumbersButton.addEventListener('click',clearNumbers)
+
+let allTotals = [];
+
+// Counting Number of Itmes in an array
+
+
+// All Profit Totals
+
+let allTotalProfit = [];
 
 // Calculations
 
@@ -65,13 +77,27 @@ function calculations(e) {
     const findingVat = findingUnitPrice + (findingUnitPrice * vatPercentageValue / 100);
     const findingTotalPrice =  findingVat * quantityValue;
 
-    // Displaying Data to the DOM
-
-    unitPriceResult.textContent ='= $' + findingUnitPrice.toFixed(2); // Display with 2 decimal places
-    totalPrice.textContent = '= $' + findingTotalPrice.toFixed(2); // Display with 2 decimal places
+    unitPriceResult.textContent = '= $' + findingUnitPrice.toFixed(2);
+    totalPrice.textContent = '= $' + findingTotalPrice.toFixed(2);
     const profit = unitPriceValue * (profitPercentageValue / 100);
     const totolProf = profit * quantityValue;
-    totalProfit.textContent = '= $' + totolProf.toFixed(2); // Display with 2 decimal places
+    totalProfit.textContent = '= $' + totolProf.toFixed(2);
+
+    // Calculating All totals for each entry
+
+    // Initialize an array to store totals
+
+    allTotals.push(findingTotalPrice);
+    localStorage.setItem('allTotals', JSON.stringify(allTotals));
+
+    // Calculating Total Profi
+
+    allTotalProfit.push(totolProf);
+    localStorage.setItem('allTotalProfit', JSON.stringify(allTotalProfit));
+
+    allTotalPriceCalc();
+    allTotalProfitCalc();
+
   }
 }
 
@@ -96,75 +122,6 @@ function clearData () {
     
 }
 
-// Real-Time Caculations
-
-
-// Add input event listeners for real-time calculations
-
-quantity.addEventListener('input', updateRealTimeCalculation);
-unitPrice.addEventListener('input', updateRealTimeCalculation);
-profitPercentage.addEventListener('input', updateRealTimeCalculation);
-vatPercentage.addEventListener('input', updateRealTimeCalculation);
-clearNumbersButton.addEventListener('click', clearNumbers);
-
-// All totals Array Initialization
-
-let allTotals = [];
-
-// Counting Number of Itmes in an array
-
-
-// All Profit Totals
-
-let allTotalProfit = [];
-
-// Calculate and update results in real-time
-
-function updateRealTimeCalculation() {
-    if (quantity.value && unitPrice.value && profitPercentage.value !== "Profit Percentage" && vatPercentage.value !== "VAT Percentage") {
-
-        // Perform real-time calculations here, similar to your calculations function
-
-        const quantityValue = parseFloat(quantity.value);
-        const unitPriceValue = parseFloat(unitPrice.value);
-        const profitPercentageValue = parseFloat(profitPercentage.value);
-        const vatPercentageValue = parseFloat(vatPercentage.value);
-
-        const findingUnitPrice = unitPriceValue + (unitPriceValue * profitPercentageValue / 100);
-        const findingVat = findingUnitPrice + (findingUnitPrice * vatPercentageValue / 100);
-        const findingTotalPrice =  findingVat * quantityValue;
-
-        unitPriceResult.textContent = '= $' + findingUnitPrice.toFixed(2);
-        totalPrice.textContent = '= $' + findingTotalPrice.toFixed(2);
-        const profit = unitPriceValue * (profitPercentageValue / 100);
-        const totolProf = profit * quantityValue;
-        totalProfit.textContent = '= $' + totolProf.toFixed(2);
-
-        // Calculating All totals for each entry
-
-        // Initialize an array to store totals
-
-        allTotals.push(findingTotalPrice);
-        localStorage.setItem('allTotals', JSON.stringify(allTotals));
-
-        // Calculating Total Profi
-
-        allTotalProfit.push(totolProf);
-        localStorage.setItem('allTotalProfit', JSON.stringify(allTotalProfit));
-
-        allTotalPriceCalc();
-        allTotalProfitCalc();
-
-
-    } else {
-
-        // Handle cases where inputs are incomplete or not valid
-
-        unitPriceResult.textContent = '= $0.00';
-        totalPrice.textContent = '= $0.00';
-    }
-}
-
 // Total Price Calculations
 
 function allTotalPriceCalc() {
@@ -183,7 +140,7 @@ function allTotalPriceCalc() {
         const theTotalPrice = total.toFixed(2);
         allTotalPrice.textContent = theTotalPrice;
         const count = allTotals.length;
-        itemsCount.textContent = ` ( ${count} )`;
+        itemsCount.textContent = `(${count})`;
     } else {
         error.textContent = "No Data Found"
         setTimeout(() => {

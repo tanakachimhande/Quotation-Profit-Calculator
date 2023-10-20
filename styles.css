@@ -48,6 +48,14 @@ h2{
     padding: 5px;
 }
 
+.operation{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 .number-of-items{
     font-size: 25px;
 }
