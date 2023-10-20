@@ -1,0 +1,130 @@
+body{
+     background-image: url('./images/cool-background\ \(1\).png');
+     background-position: cover;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.app-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    margin: 50px auto;
+    background-color: white;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+     display: flex;
+     justify-content: center;
+}
+.success{
+    color: green;
+    font-weight: bold;
+     display: flex;
+     justify-content: center;
+}
+
+.forms-container{
+    border: 2px solid orange;
+    padding: 5px;
+}
+
+.results-container{
+    border: 2px solid orange;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+h2{
+    background-color: rgba(0, 0, 0, 0.817);
+    color: white;
+    padding: 5px;
+}
+
+.unit-price{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.total-price{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.profit{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center; 
+}
+.allTotal{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.unitprice{
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+.totalprice{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+.totalprofit{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+.allTotals{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.clearbtns{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid orange;
+    padding: 5px;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width:768px) {
+    .app-container{
+        width: 95%;
+       
+    }
+    .unitprice{
+        font-size: 18px;
+        
+    }
+    .totalprice{
+        font-size: 18px;
+    
+    }
+    .totalprofit{
+        font-size: 18px;
+    
+    }
+    .allTotals{
+        font-size: 18px;
+    
+    }
+    
+}

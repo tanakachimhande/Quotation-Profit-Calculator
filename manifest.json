@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "QPC",
+    "version": "1.0",
+    "description": "Description of my extension",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "images/calculator.png"
+    }
+  }
+  
