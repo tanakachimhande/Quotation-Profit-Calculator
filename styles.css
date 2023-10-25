@@ -86,23 +86,28 @@ h2{
 }
 
 .unitprice{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     
 }
 .totalprice{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
 
 }
 .totalprofit{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
 
 }
 .allTotals{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
+
+}
+.titles{
+    font-size: 19px;
+    
 
 }
 

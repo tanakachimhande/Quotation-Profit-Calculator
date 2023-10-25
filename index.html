@@ -39,35 +39,48 @@
                 <div class="mb-3">
                  <div class="operation">
                     <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="calculate">Calculate</button>
-                    <p class="number-of-items text-dark">Items Added:<span class="items-count text-primary"> ( 0 )</span></p>
+                    <button type="button" class="btn btn-outline position-relative fs-5">
+                        Items Added
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark  fs-6 items-count">
+                          0
+                          <span class="visually-hidden">unread messages</span>
+                        </span>
+                      </button>
+                    <!-- <p class="number-of-items text-dark">Items Added:<span class="items-count text-primary"> ( 0 )</span></p> -->
                  </div>
                 </div>
             </form>
         </div>
-        <div class="results-container">
-            <h2 class="text-center">Results</h2>
-            <div class="results">
-                <div class="unit-price">
-                    <h3>Unit Price</h3>
-                    <h5 class="unitprice text-primary">= $0.00</h5>
+        <div class="container">
+            <!-- <h2 class="text-center">Results</h2> -->
+            <div class="row">
+                <div class="card col-xs-4 col-sm-4 col-md-6 col-lg-6 mb-3">
+                    <div class="card-header text-center">
+                        Description
+                    </div>
+                    <ol class="list-group list-group-flush list-group-numbered">
+                        <li class="list-group-item titles mb-3">Unit Price</li>
+                        <li class="list-group-item titles mb-3">Total Price</li>
+                        <li class="list-group-item titles mb-3">Profit</li>
+                        <li class="list-group-item titles mb-3">Final Total Price</li>
+                    </ol>
                 </div>
-                <div class="total-price">
-                    <h3>Total Price</h3>
-                    <h5 class="totalprice text-primary">= $0.00</h5>
+                <div class="card col-xs-4 col-sm-4 col-md-6 col-lg-6 mb-3">
+                    <div class="card-header text-center">
+                        Results
+                    </div>
+                    <ul class="list-group list-group-flush list-group-numbered">
+                        <li class="list-group-item text-center mb-1"><h3 class="badge bg-dark rounded-pill unitprice">0</h3></li>
+                        <li class="list-group-item text-center mb-1"><h3 class="badge bg-dark rounded-pill totalprice">0</h3></li>
+                        <li class="list-group-item text-center mb-1"><h3 class="badge bg-dark rounded-pill totalprofit">0</h3></li>
+                        <li class="list-group-item text-center mb-1"><h3 class="badge bg-dark rounded-pill allTotals">0</h3></li>
+                    </ul>
                 </div>
-                <div class="profit">
-                    <h3>Profit</h3>
-                    <h5 class="totalprofit text-primary">= $0.00</h5>
-                </div>
-                <div class="allTotal">
-                    <h3>Final Total Price</h3>
-                    <h5 class="allTotals text-primary">= $0.00</h5>
-                </div>
-                <div class="mb-3 clearbtns">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearbtn">Clear Numbers</button>
-                   <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearNumbersButton">Clear Totals</button>
-                </div> 
             </div>
+            <div class="mb-3 clearbtns">
+                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearbtn">Clear Numbers</button>
+               <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearNumbersButton">Clear Totals</button>
+            </div> 
         </div>
      </div>
 

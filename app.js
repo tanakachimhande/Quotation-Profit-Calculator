@@ -77,11 +77,11 @@ function calculations(e) {
     const findingVat = findingUnitPrice + (findingUnitPrice * vatPercentageValue / 100);
     const findingTotalPrice =  findingVat * quantityValue;
 
-    unitPriceResult.textContent = '= $' + findingUnitPrice.toFixed(2);
-    totalPrice.textContent = '= $' + findingTotalPrice.toFixed(2);
+    unitPriceResult.textContent =findingUnitPrice.toFixed(2);
+    totalPrice.textContent =findingTotalPrice.toFixed(2);
     const profit = unitPriceValue * (profitPercentageValue / 100);
     const totolProf = profit * quantityValue;
-    totalProfit.textContent = '= $' + totolProf.toFixed(2);
+    totalProfit.textContent =totolProf.toFixed(2);
 
     // Calculating All totals for each entry
 
@@ -97,6 +97,7 @@ function calculations(e) {
 
     allTotalPriceCalc();
     allTotalProfitCalc();
+    disableCalculateButton();
 
   }
 }
@@ -113,9 +114,9 @@ function clearData () {
 
     // Dynamic Data Display
 
-    unitPriceResult.textContent = '= $0.00'
-    totalPrice.textContent = '= $0.00'
-    totalProfit.textContent = '= $0.00'
+    unitPriceResult.textContent = '$0.00'
+    totalPrice.textContent = '$0.00'
+    totalProfit.textContent = '$0.00'
 
     window.location.reload();
 
@@ -205,6 +206,21 @@ function clearNumbers() {
     window.location.reload();
 
 }
+
+// Caculate Button enable and disable functionality
+
+function disableCalculateButton() {
+   const value = parseFloat(unitPriceResult.textContent);
+
+   if (value > 0) {
+    
+   calculate.disabled = true;
+   } else {
+    
+   calculate.disabled = false;
+   }
+}
+
 
 
  
