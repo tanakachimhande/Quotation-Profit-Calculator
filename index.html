@@ -13,6 +13,33 @@
             <h2 class="text-center">Quotation Prices Calculator</h2>
             <span class="error text-center"></span>
             <span class="success text-center"></span><br>
+            <!-- <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Conversions</button> -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+                </div>
+            </div>
+            </div>
             <form action="">
                 <div class="mb-3">
                     <input type="number" class="form-control" placeholder="Item Quantity..." id="quantity">
@@ -38,7 +65,7 @@
                 </div>
                 <div class="mb-3">
                  <div class="operation">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="calculate">Calculate</button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="calculate">Calculate Price</button>
                     <button type="button" class="btn btn-outline position-relative fs-5">
                         Items Added
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark  fs-6 items-count">
@@ -77,9 +104,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="mb-3 clearbtns">
-                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearbtn">Clear Numbers</button>
-               <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearNumbersButton">Clear Totals</button>
+            <div class=" mt-3 clearbtns">
+                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearbtn">Clear Data Entered</button>
+               <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="clear the fileds & results" id="clearNumbersButton">Clear All Totals</button>
             </div> 
         </div>
      </div>
